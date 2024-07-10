@@ -1,6 +1,6 @@
-# ------------------------------------------------------- #
-# The Intersection of Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ------------------------------------------------------- #
+# ----------------------------------------------------------------------------------------------- #
+# Neighborhood-Level Deprivation and Survival in Lung Cancer
+# ----------------------------------------------------------------------------------------------- #
 #
 # Figure 3: High NDI is associated with shorter survival
 #
@@ -8,24 +8,25 @@
 # Created on: 2022-11-07
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2023-06-23
+# Most recently modified on: 2024-07-10
 #
 # Notes:
-# A) 2022-10-30 - Initial script created by Ignacio Jusué-Torres, MD
-# B) 2023-04-26 - Updated script created by Ignacio Jusué-Torres, MD
-# ------------------------------------------------------- #
+# A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
+# B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
+# C) 2024-07-10 (@idblr): Re-formatted code
+# ----------------------------------------------------------------------------------------------- #
 
 ####################
 # DATA IMPORTATION #
 ####################
 
-source("code/preparation.R") 
+source(file.path('code', 'preparation.R'))
 
 #######################
 # ADDITIONAL PACKAGES #
 #######################
 
-loadedPackages <- c("graphics", "grDevices", "survival", "survminer")
+loadedPackages <- c('graphics', 'grDevices', 'survival', 'survminer')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
 ############
@@ -43,7 +44,7 @@ status <- CANCER$SurvivalStatus
 group <- CANCER$NDImesser_qt_d
 
 # Model
-f3 <- survival::survfit(survival::Surv(time, status) ~ group, data = CANCER)
+f3 <- survfit(Surv(time, status) ~ group, data = CANCER)
 
 summary(f3)
 f3
@@ -54,21 +55,23 @@ summary(f3, time = 24)$surv
 summary(f3, time = 60)$surv
 
 # Plot
-p3 <- survminer::ggsurvplot(f3,
-                            data = CANCER,
-                            risk.table = TRUE,
-                            conf.int = TRUE,
-                            break.time.by = 6,
-                            size = 1.5,
-                            xlim = c(0, 110),
-                            xlab = "Time (months)",
-                            legend.labs = c("Low NDI", "High NDI"),
-                            palette = c("#2E9FDF", "#E7B800"),
-                            pval.method = TRUE, 
-                            pval = TRUE) 
+p3 <- ggsurvplot(
+  f3,
+  data = CANCER,
+  risk.table = TRUE,
+  conf.int = TRUE,
+  break.time.by = 6,
+  size = 1.5,
+  xlim = c(0, 110),
+  xlab = 'Time (months)',
+  legend.labs = c('Low NDI', 'High NDI'),
+  palette = c('#2E9FDF', '#E7B800'),
+  pval.method = TRUE,
+  pval = TRUE
+)
 
-grDevices::png("figures/figure3.png", height = 800, width = 1100)
+png(file.path('figures', 'figure3.png'), height = 800, width = 1100)
 p3
-grDevices::dev.off()
+dev.off()
 
-# --------------------- END OF CODE --------------------- #
+# ----------------------------------------- END OF CODE ----------------------------------------- #
