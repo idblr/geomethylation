@@ -1,6 +1,5 @@
 # Neighborhood-Level Deprivation and Survival in Lung Cancer 
 <img src='hex/geomethylation.png' width='120' align='right' />
-===
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub last commit](https://img.shields.io/github/last-commit/idblr/geomethylation)
@@ -155,7 +154,7 @@ The repository also includes the code and resources to create the project hexago
 
 ### Data Availability
 
-Study participant data used in the above manuscript is available upon request from the corresponding author. U.S. census tract-level neighborhood deprivation indices are available from the [*ndi*](https://CRAN.R-project.org/package=ndi) package in [R](https://cran.r-project.org/). 
+Study participant data used in the above manuscript is available upon request from the corresponding author, [Dr. Alicia Hulbert](mailto:ahulbert@uic.edu). U.S. census tract-level neighborhood deprivation indices are available from the [*ndi*](https://CRAN.R-project.org/package=ndi) package in [R](https://cran.r-project.org/). 
 
 ### Questions?
 
