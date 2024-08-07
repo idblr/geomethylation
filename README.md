@@ -76,15 +76,15 @@ In a multicentric retrospective cohort study, higher U.S. Census tract-level nei
 </tr>
 <tr>
 <td><p align='center'>May 2024</p></td>
-<td>Manuscript submitted to <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
+<td>Manuscript submitted to <a href='https://bmccancer.biomedcentral.com/'><i>BMC Cancer</i></a></td>
 </tr>
 <tr>
 <td><p align='center'>July 2024</p></td>
-<td>Manuscript accepted in <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
+<td>Manuscript accepted in <a href='https://bmccancer.biomedcentral.com/'><i>BMC Cancer</i></a></td>
 </tr>
 <tr>
 <td><p align='center'>August 2024</p></td>
-<td><a href='https://doi.org/10.1186/s12885-024-12720-w'>Manuscript published</a> in <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
+<td><a href='https://doi.org/10.1186/s12885-024-12720-w'>Manuscript published</a> in <a href='https://bmccancer.biomedcentral.com/'><i>BMC Cancer</i></a></td>
 </tr>
 </tbody>
 </table>
