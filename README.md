@@ -1,16 +1,17 @@
-Neighborhood-Level Deprivation and Survival in Lung Cancer <img src='hex/geomethylation.png' width='120' align='right' />
-===================================================
+# Neighborhood-Level Deprivation and Survival in Lung Cancer 
+<img src='hex/geomethylation.png' width='120' align='right' />
+===
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 ![GitHub last commit](https://img.shields.io/github/last-commit/idblr/geomethylation)
 
-**Date repository last updated**: July 10, 2024
+**Date repository last updated**: 2024-08-07
 
 ### Authors
 
-* **Kathleen Kennedy**<sup>1</sup>
-* **Ignacio Jusué-Torres**<sup>2</sup> - [ORCID](https://orcid.org/0000-0002-9749-1912)
-* **Ian D. Buller**<sup>3,4</sup> - [ORCID](https://orcid.org/0000-0001-9477-8582)
+* **Kathleen Kennedy**<sup>1</sup> - *Co-First Author*
+* **Ignacio Jusué-Torres**<sup>2</sup> - *Co-First Author* - [ORCID](https://orcid.org/0000-0002-9749-1912)
+* **Ian D. Buller**<sup>3,4</sup> - *Co-First Author* - [ORCID](https://orcid.org/0000-0001-9477-8582)
 * **Emily Rossi**<sup>3,5</sup> - [ORCID](https://orcid.org/0000-0002-2312-4239)
 * **Apurva Mallisetty**<sup>6</sup> - [ORCID](https://orcid.org/0000-0002-3130-2453)
 * **Kristen Rodgers**<sup>7,8</sup> - [ORCID](https://orcid.org/0000-0003-4302-9578)
@@ -41,6 +42,7 @@ Neighborhood-Level Deprivation and Survival in Lung Cancer <img src='hex/geometh
 13.  Department of Thoracic Surgery, Vanderbilt University Medical Center, Nashville, TN, USA
 
 ### Project Details
+
 In a multicentric retrospective cohort study, higher U.S. Census tract-level neighborhood deprivation and later stage at diagnosis were associated with increasing DNA methylation suggesting a role of epigenetic changes in driving the biologic aggressiveness of lung cancer. Higher neighborhood deprivation was associated with a later stage at diagnosis and an increased mortality risk, which underscores the importance of addressing neighborhood-level socioeconomic barriers to equitably reduce lung cancer mortality.
 
 #### Project Timeframe
@@ -74,22 +76,26 @@ In a multicentric retrospective cohort study, higher U.S. Census tract-level nei
 <td>Initial manuscript submission to a peer-reviewed journal</td>
 </tr>
 <tr>
-<td><p align='center'>TBD</p></td>
-<td>Manuscript accepted in a peer-reviewed journal</td>
+<td><p align='center'>May 2024</p></td>
+<td>Manuscript submitted to <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
 </tr>
 <tr>
-<td><p align='center'>TBD</p></td>
-<td>Manuscript published in a peer-reviewed journal</td>
+<td><p align='center'>July 2024</p></td>
+<td>Manuscript accepted in <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
+</tr>
+<tr>
+<td><p align='center'>August 2024</p></td>
+<td><a href='https://doi.org/10.1186/s12885-024-12720-w'>Manuscript published</a> in <a href='https://bmccancer.biomedcentral.com/'>*BMC Cancer*</a></td>
 </tr>
 </tbody>
 </table>
 
 ### R Scripts Included In This Repository
 
-This repository includes R scripts used to compute and link the census tract-level neighborhood deprivation indices, link these values to the study participants using their census tract identification, and render the visualizations for the following peer-reviewed manuscript:
+This repository includes [R](https://cran.r-project.org/) scripts used to compute and link the census tract-level neighborhood deprivation indices, link these values to the study participants using their census tract identification, and render the visualizations for the following peer-reviewed manuscript:
 
-[INSERT PUBLISHED CITATION OF MANUSCRIPT HERE]
-
+Kennedy K (co-first), Jusue-Torres I (co-first), Buller ID (co-first), Rossi E, Mallisetty A, Rodgers K, Lee B, Menchaca M, Pasquinelli M, Nguyen RH, Weinberg F, Rubinstein I, Herman JG, Brock M, Feldman L, Aldrich MC, Hulbert A. (2024) Neighborhood-level deprivation and survival in lung cancer. *BMC Cancer*, 24(1):959. DOI:[10.1186/s12885-024-12720-w](https://doi.org/10.1186/s12885-024-12720-w) PMID:[39107707](https://pubmed.ncbi.nlm.nih.gov/39107707/)
+    
 <table>
 <colgroup>
 <col width='20%' />
@@ -103,39 +109,39 @@ This repository includes R scripts used to compute and link the census tract-lev
 </thead>
 <tbody>
 <tr>
-<td><p align='center'><code>figure1.R</code></p></td>
+<td><p align='center'><a href='code/figure1.R'><code>figure1.R</code></a></p></td>
 <td>Generate Figure 1</td>
 </tr>
 <tr>
-<td><p align='center'><code>figure2.R</code></p></td>
+<td><p align='center'><a href='code/figure2.R'><code>figure2.R</code></a></p></td>
 <td>Generate values for Figure 2 (imported into GraphPad Prism to render full figure)</td>
 </tr>
 <tr>
-<td><p align='center'><code>figure3.R</code></p></td>
+<td><p align='center'><a href='code/figure3.R'><code>figure3.R</code></a></p></td>
 <td>Generate Figure 3</td>
 </tr>
 <tr>
-<td><p align='center'><code>figure4.R</code></p></td>
+<td><p align='center'><a href='code/figure4.R'><code>figure4.R</code></a></p></td>
 <td>Generate Figure 4</td>
 </tr>
 <tr>
-<td><p align='center'><code>ndi_messer.R</code></td>
+<td><p align='center'><a href='code/ndi_messer.R'><code>ndi_messer.R</code></a></td>
 <td>Compute and link the Neighborhood Deprivation Index values based on <a href='https://doi.org/10.1007/s11524-006-9094-x'>Messer et al. (2006)</a> to study participants.</td>
 </tr>
 <tr>
-<td><p align='center'><code>ndi_powell-wiley.R</code></p></td>
+<td><p align='center'><a href='code/ndi_powell-wiley.R'><code>ndi_powell-wiley.R</code></a></p></td>
 <td>Compute and link the Neighborhood Deprivation Index values based on <a href='https://doi.org/10.1080/17445647.2020.1750066'>Andrews et al. (2020)</a> and <a href='https://doi.org/10.1016/j.dib.2022.108002'>Slotman et al. (2022)</a> to study participants.</td>
 </tr>
 <tr>
-<td><p align='center'><code>preparation.R</code></td>
+<td><p align='center'><a href='code/preparation.R'><code>preparation.R</code></a></td>
 <td>Load and prepare data for analyses, tables, and figures.</td>
 </tr>
 <tr>
-<td><p align='center'><code>supplementaltable1.R</code></p></td>
+<td><p align='center'><a href='code/supplementaltable1.R'><code>supplementaltable1.R</code></a></p></td>
 <td>Generate values for Supplemental Table 1</td>
 </tr>
 <tr>
-<td><p align='center'><code>table1.R</code></p></td>
+<td><p align='center'><a href='code/table1.R'><code>table1.R</code></a></p></td>
 <td>Generate values for Table 1</td>
 </tbody>
 </table>
@@ -145,11 +151,11 @@ The repository also includes the code and resources to create the project hexago
 ### Getting Started
 
 * Step 1: You must obtain a unique access key from the U.S. Census Bureau. Follow [this link](http://api.census.gov/data/key_signup.html) to obtain one.
-* Step 2: Specify your access key in the `messer()` or `powell_wiley()` functions from the ['ndi' package](https://CRAN.R-project.org/package=ndi) using the `key` argument or by using the `census_api_key()` function from the ['tidycensus' package](https://CRAN.R-project.org/package=tidycensus) before running the `messer()` or `powell_wiley()` functions.
+* Step 2: Specify your access key in the `messer()` or `powell_wiley()` functions from the [*ndi*](https://CRAN.R-project.org/package=ndi) package in [R](https://cran.r-project.org/) using the `key` argument or by using the `census_api_key()` function from the [*tidycensus*](https://CRAN.R-project.org/package=tidycensus) package in [R](https://cran.r-project.org/) before running the `messer()` or `powell_wiley()` functions.
 
 ### Data Availability
 
-Study participant data used in the above manuscript is available upon request from the corresponding author. U.S. census tract-level neighborhood deprivation indices are available from the ['ndi' package](https://CRAN.R-project.org/package=ndi) in R. 
+Study participant data used in the above manuscript is available upon request from the corresponding author. U.S. census tract-level neighborhood deprivation indices are available from the [*ndi*](https://CRAN.R-project.org/package=ndi) package in [R](https://cran.r-project.org/). 
 
 ### Questions?
 

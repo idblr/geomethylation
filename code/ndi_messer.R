@@ -1,6 +1,6 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
 # U.S. Census Neighborhood Deprivation Index (Messer et al. 2006)
 #
@@ -8,7 +8,7 @@
 # Created on: 2022-07-21
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) Messer et al. (2006) Neighborhood Deprivation Index (NDI):
@@ -19,18 +19,19 @@
 # E) Link patients to NDI at or before date of collection: [2000-2010], [2011], ..., [2020-2021]
 # F) Format file paths for your own directory
 # G) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# H) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-############
+# -------- #
 # PACKAGES #
-############
+# -------- #
 
 loadedPackages <- c('dplyr', 'ndi', 'sf', 'tidycensus', 'tigris')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # SETTINGS #
-############
+# -------- #
 
 options(tigris_use_cache = TRUE)
 
@@ -38,9 +39,9 @@ options(tigris_use_cache = TRUE)
 ### Obtain one at http://api.census.gov/data/key_signup.html
 census_api_key('...') # INSERT YOUR OWN KEY FROM U.S. CENSUS API
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 # Participant geocodes
 load(file.path('data', 'UIC_demographics_2822.RDA'))
@@ -161,9 +162,9 @@ IL2020_tract <- tracts(state = 'Illinois', year = 2020)
 MD2020_tract <- tracts(state = 'Maryland', year = 2020)
 tract2020 <- rbind(IL2020_tract, MD2020_tract)
 
-#############################
-# U.S. Census Tract Geocode #
-#############################
+# ------------------------- #
+# U.S. CENSUS TRACT GEOCODE #
+# ------------------------- #
 
 # Coordinates
 ## Format longitude into a separate feature (column)
@@ -759,9 +760,9 @@ cor(
   use = 'complete.obs'
 ) # Pearson's rho = 0.99957
 
-####################
+# ---------------- #
 # DATA EXPORTATION #
-####################
+# ---------------- #
 
 # rename object for identifiability with other metric linkages
 hulbert_nditractILMD_messer <- hulbert1
@@ -806,4 +807,4 @@ str(hulbert_nditractadditionalIL_messer)
 # $ NDImesser_qt       : Factor w/ 4 levels (Neighborhood Deprivation Index at the tract-level, Messer, categorical quartiles, referent as Illinois and Maryland)
 # $ NDImesser_qt_US    : Factor w/ 4 levels (Neighborhood Deprivation Index at the tract-level, Messer, categorical quartiles, referent as United States)
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

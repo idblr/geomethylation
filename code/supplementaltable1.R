@@ -1,38 +1,40 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
-# Supplemental Table 1: Comparison of neighborhood deprivation indices and their association with
-# cancer survival (N=184) in separate univariate age-adjusted Cox proportional hazard models
+# Supplemental Table 1: Comparison of neighborhood deprivation indices and their 
+# association with cancer survival (N=184) in separate univariate age-adjusted Cox 
+# proportional hazard models
 #
 # Created by: Ian D. Buller, Ph.D., M.A. (@idblr)
 # Created on: 2022-11-12
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
 # C) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# D) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 source(file.path('code', 'preparation.R'))
 
-#######################
-# ADDITIONAL PACKAGES #
-#######################
+# -------------------- #
+# ADDITIONAL LIBRARIES #
+# -------------------- #
 
 loadedPackages <- c('survival')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-########################
+# -------------------- #
 # SUPPLEMENTAL TABLE 1 #
-########################
+# -------------------- #
 
 # Multivariate Cox Proportional Hazards
 # NDI (Messer) as factor (quartiles)
@@ -129,4 +131,4 @@ fs1d_cont <- coxph(
 )
 summary(fs1d_cont)
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

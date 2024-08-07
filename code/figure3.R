@@ -1,6 +1,6 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
 # Figure 3: High NDI is associated with shorter survival
 #
@@ -8,30 +8,31 @@
 # Created on: 2022-11-07
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
 # C) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# D) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 source(file.path('code', 'preparation.R'))
 
-#######################
-# ADDITIONAL PACKAGES #
-#######################
+# -------------------- #
+# ADDITIONAL LIBRARIES #
+# -------------------- #
 
 loadedPackages <- c('graphics', 'grDevices', 'survival', 'survminer')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # FIGURE 3 #
-############
+# -------- #
 
 summary(CANCER$SurvTime)
 CANCER$SurvivalStatus  <- as.numeric(CANCER$Death)
@@ -74,4 +75,4 @@ png(file.path('figures', 'figure3.png'), height = 800, width = 1100)
 p3
 dev.off()
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

@@ -1,14 +1,15 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
-# U.S. Census Neighborhood Deprivation Index (Andrews et al. 2020 & Slotman et al. 2022)
+# U.S. Census Neighborhood Deprivation Index (Andrews et al. 2020 & 
+# Slotman et al. 2022)
 #
 # Created by: Ian Buller, Ph.D., M.A. (GitHub: @idblr)
 # Created on: 2022-08-10
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) Based on the Andrews et al. (2020) https://doi.org/10.1016/j.dib.2022.108002 and
@@ -21,18 +22,19 @@
 # F) Link patients to NDI at or before date of collection: [2000-2010], [2011], ..., [2020-2021]
 # G) Format file paths for your own directory
 # H) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# I) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-############
-# PACKAGES #
-############
+# --------- #
+# LIBRARIES #
+# --------- #
 
 loadedPackages <- c('dplyr', 'ndi', 'sf', 'tidycensus', 'tigris')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # SETTINGS #
-############
+# -------- #
 
 options(tigris_use_cache = TRUE)
 
@@ -40,9 +42,9 @@ options(tigris_use_cache = TRUE)
 ### Obtain one at http://api.census.gov/data/key_signup.html
 census_api_key('...') # INSERT YOUR OWN KEY FROM U.S. CENSUS API
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 # Participant geocodes
 load(file.path('data', 'UIC_demographics_2822.RDA'))
@@ -162,9 +164,9 @@ IL2020_tract <- tracts(state = 'Illinois', year = 2020)
 MD2020_tract <- tracts(state = 'Maryland', year = 2020)
 tract2020 <- rbind(IL2020_tract, MD2020_tract)
 
-#############################
-# U.S. Census Tract Geocode #
-#############################
+# ------------------------- #
+# U.S. CENSUS TRACT GEOCODE #
+# ------------------------- #
 
 # Coordinates
 ## Format longitude into a separate feature (column)
@@ -279,9 +281,9 @@ hulbert2 <- rbind(as.data.frame(hulbert2_2010), as.data.frame(hulbert2_2020))
 hulbert2$GEOID_tr <- as.numeric(hulbert2$GEOID_tr)
 hulbert2 <- hulbert2[order(as.numeric(hulbert2$Hulbert_study_ID)),]
 
-######################
+# ------------------ #
 # GEOGRAPHIC LINKAGE #
-######################
+# ------------------ #
 
 length(unique(as.data.frame(hulbert1)[!is.na(hulbert1$GEOID), 'GEOID'])) / 195
 ## n=175 unique census tracts (90%)
@@ -774,9 +776,9 @@ cor(
   use = 'complete.obs'
 ) # Pearson's rho = 0.9382
 
-####################
+# ---------------- #
 # DATA EXPORTATION #
-####################
+# ---------------- #
 
 # rename object for identifiability with other metric linkages
 hulbert_nditractILMD_pw <- hulbert1 
@@ -818,4 +820,4 @@ str(hulbert_nditractadditionalIL_pw)
 # $ NDIpw_qt           : Factor w/ 5 levels (Neighborhood Deprivation Index at the tract-level, Powell-Wiley, categorical quintiles, referent as Illinois and Maryland)
 # $ NDIpw_qt_US        : Factor w/ 5 levels (Neighborhood Deprivation Index at the tract-level, Powell-Wiley, categorical quintiles, referent as United States)
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

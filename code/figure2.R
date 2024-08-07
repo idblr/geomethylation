@@ -1,39 +1,41 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
-# Figure 2: Liquid biopsy epigenetic markers for lung cancer DNA methylation are associated with
-# lung cancer stage and NDI.
+# Figure 2: Liquid biopsy epigenetic markers for lung cancer DNA methylation are 
+# associated with lung cancer stage and NDI.
 #
 # Created by: Ian D. Buller, Ph.D., M.A. (@idblr)
 # Created on: 2023-06-22
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
-# C) Note: values computed here were then imported into GraphPad Prism to generate the full figure
+# C) Note: values computed here were then imported into GraphPad Prism to generate 
+#    the full figure
 # D) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# E) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 source(file.path('code', 'preparation.R'))
 
-#######################
-# ADDITIONAL PACKAGES #
-#######################
+# -------------------- #
+# ADDITIONAL LIBRARIES #
+# -------------------- #
 
 loadedPackages <- c('stats')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # FIGURE 2 #
-############
+# -------- #
 
 # Figure 2A
 cor.test(
@@ -747,4 +749,4 @@ wilcox.test(
   exact = FALSE
 )
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

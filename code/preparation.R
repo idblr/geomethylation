@@ -1,6 +1,6 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
 # Data preparation for analyses, tables, and figures
 #
@@ -8,24 +8,25 @@
 # Created on: 2022-11-01
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
 # C) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# D) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-############
-# PACKAGES #
-############
+# --------- #
+# LIBRARIES #
+# --------- #
 
 loadedPackages <- c('dplyr', 'forcats', 'gmodels', 'Hmisc')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 # Participant geocodes
 GEO_raw <- read.csv(file.path('data', 'Geocoding.csv'))
@@ -89,9 +90,9 @@ GEO$NDIpw_qt_US <- GEO[, 47] # fix names
 GEO$NDImesser_qt_US <- GEO[, 51] # fix names
 GEO <- GEO[,-c(47, 51)]
 
-###################
+# --------------- #
 # DATA MANAGEMENT #
-###################
+# --------------- #
 
 # Age
 ## Add label for plotting
@@ -127,7 +128,9 @@ GEO$SurvivalStatus  <- as.numeric(GEO$Death)
 
 # Smoking Status
 ## Recode as 'Never', 'Former', and 'Current'
-GEO$Smoker <- recode(GEO$Smoker, 'Former ' = 'Former', 'Never ' = 'Never', 'NEVER' = 'Never')
+GEO$Smoker <- recode(
+  GEO$Smoker, 'Former ' = 'Former', 'Never ' = 'Never', 'NEVER' = 'Never'
+)
 # table(GEO$Smoker, useNA = 'always')
 # Current  Former   Never
 # 75       137      43
@@ -202,7 +205,9 @@ label(GEO$NDImesser_qt.1) <- 'NDI (Messer; MD & IL reference)'
 
 GEO$NDImesser_qt_US <- as.factor(GEO$NDImesser_qt_US)
 label(GEO$NDImesser_qt_US) <- 'NDI (Messer; US reference)'
-levels(GEO$NDImesser_qt_US) <- c('Quartile 1', 'Quartile 2', 'Quartile 3', 'Quartile 4')
+levels(GEO$NDImesser_qt_US) <- c(
+  'Quartile 1', 'Quartile 2', 'Quartile 3', 'Quartile 4'
+)
 
 GEO$NDImesser_qt_US.1 <- as.numeric(GEO$NDImesser_qt_US)
 label(GEO$NDImesser_qt_US.1) <- 'NDI (Messer; US reference)'
@@ -373,4 +378,4 @@ NDI2 <- subset(CANCER, NDImesser_qt.1 == '2')
 NDI3 <- subset(CANCER, NDImesser_qt.1 == '3')
 NDI4 <- subset(CANCER, NDImesser_qt.1 == '4')
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

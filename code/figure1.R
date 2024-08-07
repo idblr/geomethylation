@@ -1,39 +1,40 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
-# Figure 1: Higher neighborhood deprivation index (NDI) values among Black patients and among
-# patients with late lung cancer stages
+# Figure 1: Higher neighborhood deprivation index (NDI) values among Black patients 
+# and among patients with late lung cancer stages
 #
 # Created by: Ian D. Buller, Ph.D., M.A. (@idblr)
 # Created on: 2022-11-07
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
 # C) 2023-07-09 (@idblr): Relabeled factor levels of 'Race' variable
 # D) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# E) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 source(file.path('code', 'preparation.R'))
 
-#######################
-# ADDITIONAL PACKAGES #
-#######################
+# -------------------- #
+# ADDITIONAL LIBRARIES #
+# -------------------- #
 
 loadedPackages <- c('cowplot', 'ggplot2', 'stats')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # FIGURE 1 #
-############
+# -------- #
 
 # Label preparation
 CANCER <- CANCER %>%
@@ -199,4 +200,4 @@ cor.test(
   exact = FALSE
 )
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #

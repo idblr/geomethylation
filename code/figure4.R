@@ -1,38 +1,40 @@
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 # Neighborhood-Level Deprivation and Survival in Lung Cancer
-# ----------------------------------------------------------------------------------------------- #
+# --------------------------------------------------------------------------------- #
 #
-# Figure 4: High NDI is associated with increased risk of mortality among lung cancer patients
+# Figure 4: High NDI is associated with increased risk of mortality among lung 
+# cancer patients
 #
 # Created by: Ian D. Buller, Ph.D., M.A. (@idblr)
 # Created on: 2022-11-07
 #
 # Most recently modified by: @idblr
-# Most recently modified on: 2024-07-10
+# Most recently modified on: 2024-08-06
 #
 # Notes:
 # A) 2022-10-30 (@idblr): Initial script created by Ignacio Jusué-Torres, MD
 # B) 2023-04-26 (@idblr): Updated script created by Ignacio Jusué-Torres, MD
 # C) 2023-07-09 (@idblr): Relabeled variables used in Cox models for figures
 # D) 2024-07-10 (@idblr): Re-formatted code
-# ----------------------------------------------------------------------------------------------- #
+# E) 2024-08-06 (@idblr): Re-formatted code
+# --------------------------------------------------------------------------------- #
 
-####################
+# ---------------- #
 # DATA IMPORTATION #
-####################
+# ---------------- #
 
 source(file.path('code', 'preparation.R'))
 
-#######################
-# ADDITIONAL PACKAGES #
-#######################
+# -------------------- #
+# ADDITIONAL LIBRARIES #
+# -------------------- #
 
 loadedPackages <- c('grDevices', 'forestmodel', 'stats', 'survival')
 suppressMessages(invisible(lapply(loadedPackages, library, character.only = TRUE)))
 
-############
+# -------- #
 # FIGURE 4 #
-############
+# -------- #
 
 # FIGURE 4A
 
@@ -133,4 +135,4 @@ png(file.path('figures', 'figure4b.png'), height = 800, width = 1100)
 p4b
 dev.off()
 
-# ----------------------------------------- END OF CODE ----------------------------------------- #
+# ---------------------------------- END OF CODE ---------------------------------- #
